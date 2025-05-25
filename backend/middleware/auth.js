@@ -8,6 +8,7 @@ const verifytoken = async(req,res,next)=>{
     //console.log(token);
     try {
         if(!token){
+            //console.log("no token");
             return res.status(401).send('You have to login first');
         }   
         const decoded = jwt.verify(token,process.env.TOKEN_SECRET);
