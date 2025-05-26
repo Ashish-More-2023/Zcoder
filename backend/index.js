@@ -52,6 +52,7 @@ app.use(login.app);
 app.use(signup.app);
 app.get('/api/getAuth',middleware,(req,res)=>{
     if(req.user){
+        //console.log(req.user);
         return res.status(200).json(req.user);
     }
     else{
